@@ -1,0 +1,208 @@
+# AquaTrack - Water Distribution Management App
+
+An offline-first Progressive Web App for water distribution companies to track customers, manage deliveries, and handle accounts receivable.
+
+## 🚀 Features
+
+- **Offline-First**: Works without internet connection using localStorage
+- **Customer Management**: Track customer details with complete contact information
+- **GPS Location Capture**: Automatic geolocation tracking for field workers
+- **Real-time Sync Status**: Monitor online/offline status and sync state
+- **Responsive Design**: Works perfectly on desktop, tablet, and mobile devices
+- **Modern UI**: Clean, professional interface with Tailwind CSS
+
+## 🛠️ Tech Stack
+
+- **Frontend**: React.js with Hooks
+- **Database**: LocalStorage (Mock PouchDB for demo)
+- **Styling**: Tailwind CSS
+- **Icons**: Lucide React
+- **Location Services**: Browser Geolocation API
+- **Build Tool**: Create React App
+
+## 📱 Live Demo
+
+🌐 **Live App**: [https://jesrael13.github.io/Aqua-Test-1](https://jesrael13.github.io/Aqua-Test-1)
+
+## 🏃‍♂️ Quick Start
+
+### Prerequisites
+- Node.js (v16 or higher)
+- npm or yarn
+- Git
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/Jesrael13/Aqua-Test-1.git
+
+# Navigate to project directory
+cd Aqua-Test-1
+
+# Install dependencies
+npm install
+
+# Start development server
+npm start
+```
+
+The app will open at [http://localhost:3000](http://localhost:3000)
+
+### Build for Production
+
+```bash
+# Create optimized build
+npm run build
+
+# Deploy to GitHub Pages
+npm run deploy
+```
+
+## 📖 How to Use
+
+### 1. **Onboarding**
+- Welcome screen introduces AquaTrack features
+- Click "Get Started" to begin
+
+### 2. **Add New Customer**
+- Fill out customer information form
+- **Important**: Click "Capture Location" to get GPS coordinates
+- All required fields must be completed
+- Save customer to local database
+
+### 3. **View Customer List**
+- See all registered customers
+- Monitor sync status (Online/Offline)
+- View customer details and location data
+- Add new customers from this screen
+
+### 4. **Offline Functionality**
+- App works completely offline
+- Data stored locally in browser
+- Sync status indicators show connection state
+- All features available without internet
+
+## 🗺️ Future Development Roadmap
+
+### Phase 1: Core Features (✅ Complete)
+- [x] Customer registration with geolocation
+- [x] Offline-first functionality
+- [x] Responsive design
+- [x] Basic customer management
+
+### Phase 2: Business Logic (🚧 In Progress)
+- [ ] Transaction recording (deliveries, payments)
+- [ ] Customer balance tracking
+- [ ] Delivery history management
+- [ ] Payment collection workflow
+
+### Phase 3: Integration (📋 Planned)
+- [ ] Google Sheets synchronization
+- [ ] CRM system integration
+- [ ] WhatsApp/SMS notifications
+- [ ] Email reporting system
+
+### Phase 4: Advanced Features (🎯 Future)
+- [ ] Route optimization for deliveries
+- [ ] Advanced analytics and reporting
+- [ ] Multi-user support with roles
+- [ ] Push notifications
+- [ ] Inventory management
+- [ ] Customer portal
+
+## 🏗️ Architecture
+
+### Database Structure
+```javascript
+// Customer Schema
+{
+  _id: "customer_[timestamp]_[random]",
+  type: "customer",
+  businessName: "ABC Company",
+  contactPerson: "John Doe",
+  phone: "+1234567890",
+  email: "john@abc.com",
+  address: "123 Main St, City",
+  geolocation: {
+    latitude: 14.5995,
+    longitude: 120.9842,
+    accuracy: 10,
+    timestamp: "2024-01-15T10:30:00Z"
+  },
+  createdAt: "2024-01-15T10:30:00Z",
+  updatedAt: "2024-01-15T10:30:00Z",
+  syncStatus: "pending", // pending, synced, error
+  balance: 0,
+  totalDeliveries: 0
+}
+```
+
+### Component Structure
+- `WaterDistributionApp` - Main container component
+- `OnboardingPage` - Welcome screen
+- `CustomerForm` - Customer registration form
+- `CustomerList` - Display all customers
+- `MockPouchDB` - Local storage simulation
+
+## 🔧 Configuration
+
+### Environment Variables (Future)
+Create a `.env` file in the root directory:
+```
+REACT_APP_COUCHDB_URL=your-couchdb-url
+REACT_APP_GOOGLE_SHEETS_API_KEY=your-api-key
+REACT_APP_MAPS_API_KEY=your-maps-api-key
+```
+
+### Deployment Configuration
+The app is configured for GitHub Pages deployment:
+- Homepage: `https://jesrael13.github.io/Aqua-Test-1`
+- Build output: `build/` directory
+- Deployment: `gh-pages` branch
+
+## 🤝 Contributing
+
+We welcome contributions! Here's how you can help:
+
+### Getting Started
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/amazing-feature`
+3. Make your changes
+4. Commit changes: `git commit -m 'Add amazing feature'`
+5. Push to branch: `git push origin feature/amazing-feature`
+6. Open a Pull Request
+
+### Development Guidelines
+- Follow React best practices
+- Use Tailwind CSS for styling
+- Write clear commit messages
+- Test thoroughly before submitting
+- Update documentation as needed
+
+### Areas We Need Help With
+- Backend integration (CouchDB, APIs)
+- Advanced reporting features
+- Mobile app development
+- Testing and quality assurance
+- Documentation improvements
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 👥 Team
+
+- **Lead Developer**: [Jesrael13](https://github.com/Jesrael13)
+- **Contributors**: Open for contributions!
+
+## 📞 Support & Contact
+
+- 🐛 **Bug Reports**: [Open an issue](https://github.com/Jesrael13/Aqua-Test-1/issues)
+- 💡 **Feature Requests**: [Request a feature](https://github.com/Jesrael13/Aqua-Test-1/issues)
+- 📧 **Email**: [Contact via GitHub](https://github.com/Jesrael13)
+
+## 🙏 Acknowledgments
+
+- React.js team for the amazing framework
+- Tailwind CSS
